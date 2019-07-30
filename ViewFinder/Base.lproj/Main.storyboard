@@ -101,7 +101,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photos" id="ePU-pn-ZsH"/>
                     <connections>
+                        <outlet property="imageView" destination="ej7-tc-Tnu" id="7GN-Dx-Vuc"/>
                         <outlet property="newImage" destination="ej7-tc-Tnu" id="YZO-h6-DP0"/>
+                        <outlet property="textField" destination="cT5-dr-uRR" id="Qui-dd-FKR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOE-PK-17p" userLabel="First Responder" sceneMemberID="firstResponder"/>

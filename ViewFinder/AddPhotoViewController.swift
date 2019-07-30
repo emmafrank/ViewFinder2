@@ -12,6 +12,15 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var imagePicker = UIImagePickerController()
 
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textField: UITextField!
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -30,10 +39,11 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var newImage: UIImageView!
-    private func imagePickerController( picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            newImage.image = selectedImage
+            imageView.image = selectedImage
+            
+            imagePicker.dismiss(animated: true, completion: nil)
         }
         // go back to our ViewController so the user can see the update
         // updates photo w selected photo
