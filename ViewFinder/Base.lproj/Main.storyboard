@@ -13,7 +13,7 @@
         <!--ViewFinder-->
         <scene sceneID="Fp4-Y7-Yl1">
             <objects>
-                <tableViewController id="iVc-wv-4O6" sceneMemberID="viewController">
+                <tableViewController id="iVc-wv-4O6" customClass="PhotoTableViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8kp-ZL-gBT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +37,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="egJ-VS-53I"/>
                         <barButtonItem key="rightBarButtonItem" title="Add New Photo" id="foa-aH-kHf">
                             <connections>
+                                <action selector="addClick:" destination="iVc-wv-4O6" id="3gx-wm-3y0"/>
                                 <segue destination="VSL-Vb-eqb" kind="show" id="0nU-Bm-KXb"/>
                             </connections>
                         </barButtonItem>
@@ -90,6 +91,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <state key="normal" title="💾"/>
+                                <connections>
+                                    <action selector="saveClick:" destination="USa-Pi-CiO" eventType="touchUpInside" id="Qqg-pd-Esi"/>
+                                    <action selector="savePhotoTapped:" destination="VSL-Vb-eqb" eventType="touchUpInside" id="TG0-V1-Cch"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="ej7-tc-Tnu">
                                 <rect key="frame" x="103" y="266" width="208" height="98"/>
@@ -103,10 +108,12 @@
                     <connections>
                         <outlet property="imageView" destination="ej7-tc-Tnu" id="7GN-Dx-Vuc"/>
                         <outlet property="newImage" destination="ej7-tc-Tnu" id="YZO-h6-DP0"/>
+                        <outlet property="savePhotoTapped" destination="P5q-Ug-ulN" id="dFp-Bf-QBC"/>
                         <outlet property="textField" destination="cT5-dr-uRR" id="Qui-dd-FKR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOE-PK-17p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="USa-Pi-CiO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1318.840579710145" y="-104.46428571428571"/>
         </scene>
